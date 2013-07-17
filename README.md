@@ -1,4 +1,4 @@
-
+SGD
 
 Minimizes function using Stochastic Gradient Descent Algorithm.
 Variation of the L. Bottou's SGD and Inria's JSGD.
