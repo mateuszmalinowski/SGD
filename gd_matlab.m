@@ -67,16 +67,12 @@ while it <= nIterations
     eta = eta0 / (1 + lambda * eta0 * epochNo);
     fw = 1 - eta * lambda; 
     
-    if isVerbose
-      fprintf('Epoch %d\n', epochNo);
-    end
-    
     % we pass over all data points
     for k = 1:numData
       
       if isVerbose
-        fprintf('-- %d which is %d out of %d\n data point', ...
-          dataIndices(k), k, numData);
+        fprintf('Epoch %d; %d which is %d out of %d data points\n', ...
+          epochNo, dataIndices(k), k, numData);
       end
       
       % computes objective
