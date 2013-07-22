@@ -10,6 +10,6 @@ sgd(funObj, funPrediction, x0, train, valid, options, varargin)
 
 I provide the source code together with the example (softmax objective function).
 
-Function GD is a Gradient Descent method similar to SGD. Here the idea is 
+gd_matlab is a Gradient Descent method similar to SGD. Here the idea is 
 that instead of using SGD we use just simple GD and delegate the 
 responsibility of computing (noisy) gradient to the objective function.
