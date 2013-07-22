@@ -67,8 +67,17 @@ while it <= nIterations
     eta = eta0 / (1 + lambda * eta0 * epochNo);
     fw = 1 - eta * lambda; 
     
+    if isVerbose
+      fprintf('Epoch %d\n', epochNo);
+    end
+    
     % we pass over all data points
     for k = 1:numData
+      
+      if isVerbose
+        fprintf('-- %d which is %d out of %d\n data point', ...
+          dataIndices(k), k, numData);
+      end
       
       % computes objective
       [~, grad] = funObj(x, dataIndices(k), varargin{:});
@@ -83,8 +92,7 @@ while it <= nIterations
     end
     
     if isVerbose
-      fprintf('Epoch %d\n', epochNo);
-      
+            
       if ~isempty(funPred) && ~isempty(trainX)
         trainPred = funPred(x, trainX, varargin{:});
         trainAcc = sum(trainPred == trainY) / length(trainY);
