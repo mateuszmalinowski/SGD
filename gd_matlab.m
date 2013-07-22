@@ -123,7 +123,7 @@ if isValidation
 end
 
 if nargout == 2
-  [~, f] = funObj(x, trainX, trainY, varargin{:});
+  [~, f] = funObj(x, 1:numData, varargin{:});
 end
 
 end
