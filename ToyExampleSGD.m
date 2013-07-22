@@ -24,8 +24,8 @@ ntest = size(Xtest, 2);
 
 % Graphic output
 close all 
-% plot_with_labels(Xtrain(1:end-1,:), Ltrain);
-% title('Train data')
+plot_with_labels(Xtrain(1:end-1,:), Ltrain);
+title('Train data')
 
 % training parameters
 opt = struct(); 
@@ -54,7 +54,8 @@ w = zeros((d+1) * nclass, 1);
 % objective function and the prediction function for SVM
 SVM_C = 0;
 funObj = @(w, x, y) single_softmax_cost(w, x, y, SVM_C);
-funPred = @(w, X) single_softmax_pred(w, X);
+funPred = @(w, X) softmax_pred(w, X);
+% funPred = [];
 
 % first we check if gradients are ok
 randTheta = rand(size(w));
